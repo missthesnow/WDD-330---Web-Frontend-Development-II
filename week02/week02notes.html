@@ -1,1 +1,211 @@
-This will be week 02 notes.
+<!DOCTYPE html>
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Week 02 Notes</title>
+      <link rel="stylesheet" href="../styles/week02style.css">
+   </head>
+   <body>
+    <header>
+        <h2>Week 02 Notes</h2>
+        <nav>
+            <ul style="text-align: left;"><a href="../WDD 330.html">← WDD 330 Notes</a></ul>
+        </nav>
+    </header>
+      <div>
+         <h2>JavaScript Programming Basics</h2>
+         <hr>
+         <h3>Comments</h3>
+         <p style="font-family: 'Courier New', Courier, monospace;">// This is a single-line comment
+        <br><br>
+         /* This is a multi-line comment<br>
+            Anything in this space will <br>
+            be ignored<br>
+        */</p>
+         <h3>Reserved Words</h3>
+         <p style="font-size: xx-small; text-align: justify;">abstract, await, boolean, break, byte, case, catch, char, class, 
+            const, continue, debugger, default, delete, do, double, else, enum, export, extends, false, final, 
+            finally, float, for, function, goto, if, implements, import, in instanceof, int, interface, let, 
+            long, native, new, null, package, private, protected, public, return, short, static, super, switch, 
+            synchronized, this, throw, throws, transient, true, try, typeof, var, volatile, void, while, with, yield
+        </p>
+        <h3>Declaring Variables</h3>
+        <p>"let" allows the variable to be changed later as needed<br><br>
+           "const" means the variable cannot be reassigned to another value</p>
+        <h3 style="font-family: 'Courier New', Courier, monospace;">var</h3>
+        <p>I didn't know that var was outdated. I have used it in a few JavaScript bot projects. It would likely be 
+            good practice to go back and look at that code to see what I can update.</p>
+        <h3>Scope</h3>
+        <p>Block Scope - "const" and "let" are block scoped - their value only exists inside the block they are 
+            declared in.<br><br>
+            Global Scope - Declared outside block; applicable to entire program.<br></p>
+            <p style="font-size: x-small;">(Personal Note: The Romani bot largely makes use of global variables, but 
+            according to the text, it would be better practice to keep these as few as possible in order to avoid
+            potentially overwriting variables. Should go back and see what can be changed, especially as Romani/Mozart
+            Bot merge is imminent.)<br><br></p>
+            <p>Local Scope - Global variables can be overwritten in the block. (See Also: Block Scope)</p>
+        <h3>Variable Naming</h3>
+        <p>Variable names are case sensitive, so "Variable" "variable" and "VARIABLE" are 3 seperate variables.<br><br>
+           Variables with multiple names can be written in camel case or with underscores.<br>
+           i.e., thisIsAVariable versus this_is_a_variable</p>
+        <h3>Booleans</h3>
+        <p>Truthy values are values in JavaScript that are true.<br>
+           Falsy values consist of 9 values and are always false. They are:<br></p>
+            <ul style="font-family: 'Courier New', Courier, monospace;">"" // double quoted empty string literal</ul>
+            <ul style="font-family: 'Courier New', Courier, monospace;">'' // single quoted empty string literal</ul>
+            <ul style="font-family: 'Courier New', Courier, monospace;">`` // empty template literal</ul>
+            <ul style="font-family: 'Courier New', Courier, monospace;">0</ul>
+            <ul style="font-family: 'Courier New', Courier, monospace;">-0 // considered different to 0 by JavaScript!</ul> 
+            <ul style="font-family: 'Courier New', Courier, monospace;">NaN</ul>
+            <ul style="font-family: 'Courier New', Courier, monospace;">false</ul>
+            <ul style="font-family: 'Courier New', Courier, monospace;">null</ul>
+            <ul style="font-family: 'Courier New', Courier, monospace;">undefined</ul>
+      </div>
+      <hr>
+      <div>
+        <h2>Arrays, Logic, and Loops</h2>
+        <hr>
+        <h3>Arrays</h3>
+        <p>An array literal (an ordered list of values) is written with a pair of square brackets<br><br>
+           Add a value to an array like so:</p>
+           <p style="font-family: 'Courier New', Courier, monospace;">array[0] = 'Value';</p>
+           <p>Note that the array value starts at zero (like everything else in computing).<br><br>
+           Remove an array value like so:</p>
+           <p style="font-family: 'Courier New', Courier, monospace;">delete avengers[3];</p>
+        <h3>Logic</h3>
+           <p style="color: #FFABF9;">if statements</p>
+           <p style="font-family: 'Courier New', Courier, monospace;">
+            if (condition) {<br>
+            // code to run if condition is true<br>
+            }</p>
+           <p style="color: #FFABF9;">else statements</p>
+           <p style="font-family: 'Courier New', Courier, monospace;">
+            if (condition) {<br>
+            // code to run if condition is true<br>
+            } else {<br>
+            // code to run if condition is false<br>
+            }</p>
+           <p style="color: #FFABF9;">Ternary Operator</p>
+           <p style="font-family: 'Courier New', Courier, monospace;">
+            condition ? (//code to run if condition is true) : (//code to run if condition is false)</p>
+           <p style="color: #FFABF9;">Switch Statements</p>
+           <p style="font-family: 'Courier New', Courier, monospace;">
+            if (number === 4) {<br>
+            console.log('You rolled a four');<br>
+            } else if (number === 5) {<br>
+            console.log('You rolled a five');<br>
+            } else if(number === 6){<br>
+            console.log('You rolled a six');<br>
+            } else {<br>
+            console.log('You rolled a number less than four');<br>
+            }</p>
+            <p style="font-size: x-small;">(Personal Note: The Romani bot uses switch statements to evaluate
+                messages sent to the stream - mainly they are used to tell when it should respond to a message.
+                Was it sent by a moderator? An admin? Which prefix was used? General use? Admin? Etc...)</p>
+        <h3>Loops</h3>
+           <p style="color: #FFABF9;">While Loops</p>
+           <p style="font-family: 'Courier New', Courier, monospace;">
+            while (condition) {<br>
+            // do something<br>
+            }</p>
+           <p style="color: #FFABF9;">Infinite Loops</p>
+           <p style="font-family: 'Courier New', Courier, monospace;">
+            let n = 1;<br>
+            while(n>0){<br>
+                console.log('Hello');<br>
+                n++;<br>
+            }</p>
+           <p style="color: #FFABF9;">do ... while Loops</p>
+           <p style="font-family: 'Courier New', Courier, monospace;">
+            do {<br>
+            do something<br>
+            } while(condition)</p>
+           <p style="color: #FFABF9;">For Loops</p>
+           <p style="font-family: 'Courier New', Courier, monospace;">
+            for (initialization ; condition ; after) { do something }</p>
+           <p style="color: #FFABF9;">Nested for Loops</p>
+           <p style="font-family: 'Courier New', Courier, monospace;">
+            for(let i=1 ; j&lt;13 ; i++){<br>
+            for(let i=1 ; j&lt;13 ; j++){<br>
+                console.log(`${j} multiplied by ${i} is ${i*j}`);<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+            }</p>
+      </div>
+      <hr>
+      <div>
+          <h2>Functions</h2>
+          <hr>
+          <h3>Function Declarations</h3>
+          <p style="font-family: 'Courier New', Courier, monospace;">
+            function hello(){<br>
+            console.log('Hello World!');<br>
+           }</p>
+          <h3>Invoking a Function</h3>
+          <p style="font-family: 'Courier New', Courier, monospace;">
+            hello();<br>
+            << 'Hello world!'</p>
+          <h3>Return Values</h3>
+          <p style="font-family: 'Courier New', Courier, monospace;">
+            function howdy(){<br>
+            return 'Howdy World!';<br>
+           }</p>
+          <p>Function invokations can be assigned to a variable like so:</p>
+          <p style="font-family: 'Courier New', Courier, monospace;">
+            const message = howdy();<br>
+            << 'Howdy World!'</p>
+          <h3>Default Parameters</h3>
+          <p style="font-family: 'Courier New', Courier, monospace;">
+            function hello(name='World') {<br>
+            console.log(`Hello ${name}!);<br>
+           }</p>
+           <p>Where 'World' is the default. The default can be overridden like so:</p>
+           <p style="font-family: 'Courier New', Courier, monospace;">
+            hello('Universe');<br>
+            << 'Hello Universe!'</p>
+          <h3>Arrow Functions</h3>
+          <p style="font-family: 'Courier New', Courier, monospace;">const square = x =&gt; x*x;</p>
+          <p style="color: #FFABF9;">Why use arrow functions?</p>
+          <ul>Much less verbose than normal function declarations</ul>
+          <ul>Single parameters do not need to be put into parentheses</ul>
+          <ul>The body of the function does not need to be placed inside a block if it's only one line</ul>
+          <ul>The return keyword isn't required if the return statement is the only statement in the body of the function</ul>
+          <ul>They do not bind their own value of this to the function</ul>
+          <h3>Callbacks</h3>
+          <p style="font-family: 'Courier New', Courier, monospace;">
+            function sing(song) {<br>
+            console.log(`I'm singing along to ${song}`);<br>
+            }<br><br>
+            sing('Let It Go')<br>
+            << 'I'm singing along to Let It Go'</p>
+          <p>The function can be made more flexible by adding a callback parameter like so:</p>
+          <p style="font-family: 'Courier New', Courier, monospace;">
+            function sing(song,callback) {<br>
+            console.log(`I'm singing along to ${song}.`);<br>
+            callback();<br>
+           }</p>
+          <h3>Array Iterators</h3>
+          <p style="color: #FFABF9;">forEach()</p>
+          <p style="font-family: 'Courier New', Courier, monospace;">
+            colors.forEach( (color,index) =&gt;
+            console.log(`Color at position ${index}  is ${color}`) );
+            <<&nbsp;&nbsp;&nbsp;&nbsp;"Color at position 0 is Red"
+            &nbsp;&nbsp;&nbsp;&nbsp;"Color at position 1 is Green"
+            &nbsp;&nbsp;&nbsp;&nbsp;"Color at position 2 is Blue"</p>
+          <p style="color: #FFABF9;">map()</p>
+          <p style="font-family: 'Courier New', Courier, monospace;">
+            [1,2,3].map( square )<br>
+            << [1, 4, 9]</p>
+          <p style="color: #FFABF9;">Reduce</p>
+          <p style="font-family: 'Courier New', Courier, monospace;">
+            [1,2,3,4,5].reduce( (acc,val) => prev + val );</p>
+          <p style="color: #FFABF9;">Filter()</p>
+          <p style="font-family: 'Courier New', Courier, monospace;">
+            const numbers = [ 2, 7, 6, 5, 11, 23, 12 ]<br>
+            numbers.filter(x => x%2 === 0 ); // this returns true if the number is even</p>
+          <p style="color: #FFABF9;"></p>
+          <p style="font-family: 'Courier New', Courier, monospace;"></p>
+      </div>
+      <br><br>
+      <footer style="clear: right; text-align: center;">
+        <p>Created by Whitney LeSueur - Winter 2021</p>
+      </footer>
+</body></html>
