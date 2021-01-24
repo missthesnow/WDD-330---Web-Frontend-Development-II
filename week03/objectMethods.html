@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Object Methods</title>
+      <link rel="stylesheet" href="../styles/week03style.css">
+   </head>
+   <body>
+    <header>
+        <h2>Week 03 Notes</h2>
+        <nav>
+            <ul style="text-align: left;"><a href="./week03index.html">← Week 03 Notes</a></ul>
+        </nav>
+    </header>
+      <div>
+         <h2>Object methods, "this"</h2>
+         <hr>
+         <h3>Method examples</h3>
+         <p style="color: #FFABF9;">Function Expression</p>
+         <p style="font-family: 'Courier New', Courier, monospace;">let user = {<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;name: "John",<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;age: 30<br>
+          };<br><br>
+        
+          user.sayHi = function() {<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;alert("Hello!");<br>
+          };<br><br>
+        
+        user.sayHi(); // Hello!</p>
+        <p>Above, a Function Expression is used to create a function and assign it to the property user.sayHi of 
+          the object. This allows user.sayHi() to be called.</p> 
+          <p style="color: #FFABF9;">A function that is a property of an object is called its method.</p>         
+         <h3>Method shorthand</h3>
+         <p style="color: #FFABF9;">Shorter syntax for methods in an object literal:</p>
+         <p style="font-family: 'Courier New', Courier, monospace;">// these objects do the same<br><br>
+          user = {<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;sayHi: function() {<br>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;alert("Hello");<br>
+              &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+          };<br><br>
+          
+          user = {<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;sayHi() {<br>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;alert("Hello");<br>
+              &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+          };<br></p>
+          <p>This means we can omit "function" and just write sayHi(). Note that the notations are not fully identical.</p>
+         <h3>“this” in methods</h3>
+         <p>Object methods often need to access the information stored in the object to do their job. (i.e., 
+           the code inside user.sayHi() may need the name of the user)</p>
+         <p style="color: #FFABF9;">To access the object, a method can use the <em>this</em> keyword.</p>
+         <p>The value of <em>this</em> is the object “before dot”, the one used to call the method.</p>
+         <h3>“this” is not bound</h3>
+         <p>In JavaScript, <em>this</em> can be used in any function, even if it’s not a method of an object. The value 
+          of <em>this</em> is evaluated during the run-time, depending on the context.</p>
+         <h3>Arrow functions have no “this”</h3>
+         <p>Arrow functions are special: they don’t have their “own” <em>this</em>>. If we reference <em>this</em> 
+          from such a function, it’s taken from the outer “normal” function.<br>Example:</p>
+          <p style="font-family: 'Courier New', Courier, monospace;">let user = {<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;firstName: "Ilya",<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;sayHi() {<br>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;let arrow = () => alert(this.firstName);<br>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;arrow();<br>
+              &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+          };<br><br>
+          
+          user.sayHi(); // Ilya</p>
+      </div>   
+      <br><br>
+      <footer style="clear: right; text-align: center;">
+        <p>Created by Whitney LeSueur - Winter 2021</p>
+      </footer>
+</body></html>

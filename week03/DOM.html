@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Document Object Model</title>
+      <link rel="stylesheet" href="../styles/week03style.css">
+   </head>
+   <body>
+    <header>
+        <h2>Week 03 Notes</h2>
+        <nav>
+            <ul style="text-align: left;"><a href="./week03index.html">← Week 03 Notes</a></ul>
+        </nav>
+    </header>   
+      <div>
+         <h2>The Document Object Model</h2>
+         <hr>
+         <h3>The DOM</h3>
+         <p>The Document Object Model (DOM) represents an HTML document as a network of connected nodes that form a 
+             tree-like structure. The DOM treats everything on a web page as a node. The HTML tag is the root node, 
+             and every other part of the document is a child node of this.<br>
+             The DOM is not actually part of JavaScript because it is language agnostic, but it is commonly used with 
+             JavaScript We can use JavaScript to access and modify different parts of a web page using a special 
+             built-in object called document .</p>
+         <h3>Getting elements</h3>
+         <p style="color: #FFABF9;">getElementById</p>
+         <p style="font-family: 'Courier New', Courier, monospace;">const body = document.body;</p>
+         <p>All Nodes have a numerical code to signify what type they are:</p>
+         <table>
+            <tr>
+                <td>>&nbsp;Code>&nbsp;</td>
+                <td>>&nbsp;Type</td>
+            </tr>
+            <tr>
+                <td style="text-align: center;">1</td>
+                <td>>&nbsp;Element</td>
+            </tr>
+            <tr>
+                <td style="text-align: center;">2</td>
+                <td>>&nbsp;Attribute</td>
+            </tr>
+            <tr>
+                <td style="text-align: center;">3</td>
+                <td>>&nbsp;Text</td>
+            </tr>
+            <tr>
+                <td style="text-align: center;">8</td>
+                <td>>&nbsp;Comment</td>
+            </tr>
+            <tr>
+                <td style="text-align: center;">9</td>
+                <td>&nbsp;Body</td>
+            </tr>
+          </table>
+         <p style="color: #FFABF9;">getElementsByClassName</p>
+         <p style="font-family: 'Courier New', Courier, monospace;">const h1 = document.getElementById('title');</p>
+         <p style="color: #FFABF9;">getElementsByTagName</p>
+         <p style="font-family: 'Courier New', Courier, monospace;">const listItems = document.getElementsByTagName('li');</p>
+         <p style="color: #FFABF9;">querySelector</p>
+         <p style="font-family: 'Courier New', Courier, monospace;">const heroes = document.getElementsByClassName('hero');</p>
+         <p style="color: #FFABF9;">querySelector</p>
+         <p style="font-family: 'Courier New', Courier, monospace;">document.querySelector('#bats');<br>
+            << &lt;li class="vigilante hero" id="bats"&gt;Batman&lt;/li&gt;</p>
+         <h3>Navigating the DOM</h3>
+         <p>Node objects have a number of properties and methods for navigating around the document tree. Once you have a 
+             reference to an element, you can walk along the document tree to find other nodes. </p>
+         <h3>Getting and setting an element’s attributes</h3>
+         <p>The getAttribute() method returns the value of the attribute provided as an argument<br>
+            The setAttribute() method can change the value of an element’s attributes. It takes two arguments: 
+            the attribute that you wish to change, and the new value of that attribute.</p>
+      </div>
+      <br><br>
+      <footer style="clear: right; text-align: center;">
+        <p>Created by Whitney LeSueur - Winter 2021</p>
+      </footer>
+</body></html>

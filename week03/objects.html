@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Object Methods</title>
+      <link rel="stylesheet" href="../styles/week03style.css">
+   </head>
+   <body>
+    <header>
+        <h2>Week 03 Notes</h2>
+        <nav>
+            <ul style="text-align: left;"><a href="./week03index.html">← Week 03 Notes</a></ul>
+        </nav>
+    </header>
+      <div>
+        <h2>Objects</h2>
+        <hr>
+        <h3>Object Literals</h3>
+        <p>Self-contained set of related values and functions acting as a collection of named properties that map 
+            to any JavaScript value (i.e., strings, numbers, booleans, arrays, functions, etc.) If a property’s value 
+            is a function, it is known as a <em>method</em>. They can be employed to encapsulate code that can be 
+            reused throughout a program. They can also inherit properties from other objects.             
+            Objects are often used to keep any related information and functionality together in the same place. 
+        <h3>Creating Objects</h3>
+        <p style="color: #FFABF9;">To create an object literal, simply enter a pair of curly braces.</p>
+        <p style="font-family: 'Courier New', Courier, monospace;">const spiderman = {};</p>
+        <p style="color: #FFABF9;">It’s also possible to create an object using a constructor function.</p>
+        <p style="font-family: 'Courier New', Courier, monospace;">const spiderman = new Object();</p>
+        <h3>Accessing Properties</h3>
+        <p>You can access the properties of an object using the dot notation and bracket notation (the property is 
+            represented by a string inside square brackets, so needs to be placed inside single or double quotation marks)</p>
+        <p>Dot notation is much more common, but bracket notation has the advantage of being the only way to access 
+            nonstandard property and method names that don’t follow the variable naming rules. <br>It also lets you evaluate 
+            an expression and use it as the property key</p>
+        <h3>Computed Properties</h3>
+        <p>The ability to create objects with computed property keys was introduced in ES6. This means that JavaScript code 
+            can be placed inside square brackets and the property key will be the return value of that code. The value of a 
+            property has always been allowed to be a JavaScript expression. </p>
+        <h3>Calling Methods</h3>
+        <p>To call an object’s method we can also use dot or bracket notation. Calling a method is the same as invoking 
+            a function, so parentheses need to be placed after the method name:</p>
+        <p style="font-family: 'Courier New', Courier, monospace;">
+            superman.fly()<br>
+            << 'Up, up and away!'<br>
+            superman['fly']()<br>
+            << 'Up, up and away!'</p>
+        <h3>Checking if Properties or Methods Exist</h3>
+        <p style="color: #FFABF9;">The <em>in</em> Operator</p>
+        <p style="font-family: 'Courier New', Courier, monospace;">'city' in superman;<br>
+            << false</p>
+        <p style="color: #FFABF9;">Check if property or method doesn’t return <em>undefined</em> :</p>
+        <p style="font-family: 'Courier New', Courier, monospace;">superman.city !== undefined;<br>
+            << false</p>
+        <h3>Finding all the Properties of an Object</h3>
+        <p>We can loop through all of an object’s properties and methods by using a for in loop. For example, to log all the 
+            properties of the superman object to the console, we could use:</p>
+        <p style="font-family: 'Courier New', Courier, monospace;">
+            for(const key in superman) {<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;console.log(key + ": " + superman[key]);<br>
+        }<br>
+        << "name: Superman"<br>
+        << "real name: Clark Kent"<br>
+        << "height: 75"<br>
+        << "weight: 235"<br>
+        << "hero: true"<br>
+        << "villain: false"<br>
+        << "allies: Batman,Supergirl,Superboy"<br>
+        << "fly: function (){<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;console.log(\"Up, up and away!\");<br>
+        }"</p>
+        <h3>Properties Can Be:</h3>
+        <p style="color: #FFABF9;">Added:</p>
+        <p style="font-family: 'Courier New', Courier, monospace;">
+            superman.city = 'Metropolis';<br>
+            << 'Metropolis'</p>
+        <p style="color: #FFABF9;">Changed:</p>
+        <p style="font-family: 'Courier New', Courier, monospace;">
+            superman['real name'] = 'Kal-El';<br>
+            << 'Kal-El'</p>
+        <p style="color: #FFABF9;">Removed:</p>
+        <p style="font-family: 'Courier New', Courier, monospace;">
+            delete superman.fly<br>
+            << true</p>
+        <h3>Nested Objects</h3>
+        <p style="color: #FFABF9;">Objects can be nested like so:</p>
+        <p style="font-family: 'Courier New', Courier, monospace;">
+            const jla = {<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;superman: { realName: 'Clark Kent' },<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;batman: { realName: 'Bruce Wayne' },<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;wonderWoman: { realName: 'Diana Prince" },<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;flash: { realName: 'Barry Allen' },<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;aquaman: { realName: 'Arthur Curry' },<br>
+        }</p>
+        <h3>Objects as Parameters to Functions</h3>
+        <p>Note that objects are copied by reference!</p>
+        <h3>Namespacing</h3>
+        <p>Naming collisions occur when the same variable or function name is used for different purposes by code 
+            sharing the same scope. This problem an be encountered when using code librares or when working in teams.
+            <br>Solution: Use the <b>object literal pattern</b> to create a namespace for groups of related functions. 
+            <br>This is done by creating an object literal that serves as the namespace, then adding any values as 
+            properties of that object, and any functions as methods.</p>
+        <h3>JSON</h3>
+        <p>JavaScript Object Notation, a lightweight data-storage format that is used for data serialization and 
+            configuration. Used to exchange information between web services.<br>
+            JSON is a string representation of the object literal notation.<br></p>
+            <p style="color: #FFABF9;">Key differences:</p>
+            <ul>Property names must be double-quoted</ul>
+            <ul>Functions are not permitted values</ul>
+            <p style="color: #FFABF9;">Permitted Values:</p>
+            <ul>double-quoted strings</ul>
+            <ul>numbers</ul>
+            <ul>true</ul>
+            <ul>false</ul>
+            <ul>null</ul>
+            <ul>arrays</ul>
+            <ul>objects</ul>
+        <h3>The Math Object</h3>
+        <p>A built-in object that has several properties representing mathematical constants, as well as methods that 
+            carry out a number of common mathematical operations. All the properties and methods of the Math object 
+            are immutable.</p>
+        <h3>Mathematical Constants</h3>
+        <p style="color: #FFABF9;">The ratio of the circumference and diameter of a circle</p>
+        <p style="font-family: 'Courier New', Courier, monospace;">Math.PI<br>
+            << 3.141592653589793</p>
+        <p style="color: #FFABF9;">The square root of 2</p>
+        <p style="font-family: 'Courier New', Courier, monospace;">Math.SQRT2<br>
+            << 1.4142135623730951</p>
+        <p style="color: #FFABF9;">The reciprocal of the square root of 2</p>
+        <p style="font-family: 'Courier New', Courier, monospace;">Math.SQRT1_2<br>
+            << 0.7071067811865476</p>
+        <p style="color: #FFABF9;">Euler's constant</p>
+        <p style="font-family: 'Courier New', Courier, monospace;">Math.E<br>
+            << 2.718281828459045</p>
+        <p style="color: #FFABF9;">The natural logarithm of 2</p>
+        <p style="font-family: 'Courier New', Courier, monospace;">Math.LN2
+            << 0.6931471805599453</p>
+        <p style="color: #FFABF9;">The natural logarithm of 10</p>
+        <p style="font-family: 'Courier New', Courier, monospace;">Math.LN10
+            << 2.302585092994046</p>
+        <p style="color: #FFABF9;">Log base 2 of Euler's constant</p>
+        <p style="font-family: 'Courier New', Courier, monospace;">\Math.LOG2E
+            << 1.4426950408889634</p>
+        <p style="color: #FFABF9;">Log base 10 of Euler's constant</p>
+        <p style="font-family: 'Courier New', Courier, monospace;">Math.LOG10E
+            << 0.4342944819032518t</p>
+        <h3>Mathematical Methods</h3>
+            <ul>Absolute Values</ul>
+            <ul>Rounding Methods</ul>
+            <ul>Powres and Roots</ul>
+            <ul>Logarithmic Methods</ul>
+            <ul>Maximum & Minimum Methods</ul>
+            <ul>Trigonometric Functions</ul>
+            <ul>Random Numbers</ul>
+            <ul>Trigonometric Functions</ul>
+            <ul>Constructor Function</ul>
+        <h3>The RegExp Object</h3>
+        <p>A regular expression is a pattern that can be used to search strings for matches to the pattern. 
+            A common use is 'find and replace' type operations.<br>
+            Example, say you were looking for any word ending in 'ing', you could use the regular expression</p>
+            <p style="font-family: 'Courier New', Courier, monospace;">/[a-zA-Z]+ing$/</p>
+        <p style="color: #FFABF9;">Metacharacters</p>
+            <ul> . matches any character, except line breaks</ul>
+            <ul> \w matches any word character, and is equivalent to [A-Za-z0-9_]</ul>
+            <ul> \W matches any non-word character, and is equivalent to [\^A-Za-z0-9_]</ul>
+            <ul> \d matches any digit character, and is equivalent to [0-9]</ul>
+            <ul> \D matches any non-digit character, and is equivalent to [^0-9]</ul>
+            <ul> \s matches any whitespace character, and is equivalent to [ \t\r\n\f]</ul>
+            <ul> \S matches any non-whitespace character, and is equivalent to [^ \t\r\n\f]</ul>
+        <p style="color: #FFABF9;">Modifiers (can be escaped using a backslash)</p>
+            <ul>? makes the preceding token in the regular expression optional</ul>
+            <ul>* matches one or more occurrences of the preceding token</ul>
+            <ul>+ matches one or more occurrences of the preceding token</ul>
+            <ul>{n} matchesnoccurrences of the preceding token</ul>
+            <ul>{n,} matches at leastnoccurrences of the pattern</ul>
+            <ul>{,m} matches at mostmoccurrences of the preceding token</ul>
+            <ul>{n,m} matches at leastnand at mostmoccurrences of the preceding token</ul>
+            <ul>^ marks the position immediately before the first character in the string</ul>
+            <ul>$ marks the position immediately after the last character in the string</ul>
+     </div>
+      <br><br>
+      <footer style="clear: right; text-align: center;">
+        <p>Created by Whitney LeSueur - Winter 2021</p>
+      </footer>
+</body></html>

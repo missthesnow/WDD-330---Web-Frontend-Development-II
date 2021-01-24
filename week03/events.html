@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Events</title>
+      <link rel="stylesheet" href="./styles/week03style.css">
+   </head>
+   <body>
+    <header>
+        <h2>Week 03 Notes</h2>
+        <nav>
+            <ul style="text-align: left;"><a href="../WDD 330.html">← WDD 330 Notes</a></ul>
+        </nav>
+    </header>  
+      <div>
+         <h2>Events</h2>
+         <hr>
+         <h3>Event Listeners</h3>
+         <p>They are like setting a notification to alert you when something happens. Instead of the program having to 
+           constantly check to see if an event has occurred, the event listener will let it know when the event happens, 
+           and the program can then respond appropriately. This allows the program to continue with other tasks while it 
+           waits for the event to happen.</p>
+         <h3>The Event Object</h3>
+         <p>Whenever an event handler is triggered by an event, the callback function is called. This function is 
+           automatically passed an event object as a parameter that contains information about the event.</p>
+         <h3>Mouse, Keyboard, and Touch Events</h3>
+         <p style="color: #FFABF9;">An Example</p>
+         <p style="font-family: 'Courier New', Courier, monospace;">function doSomething(event){<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;console.log(event.type);<br>
+          }</p>
+         <h3>Removing Event Listeners</h3>
+         <p style="color: #FFABF9;">An event listener can be removed using the removeEventListener() method</p>
+         <p style="font-family: 'Courier New', Courier, monospace;">c
+          onst onceParagraph = document.getElementById('once');<br>
+          onceParagraph.addEventListener('click', remove);<br>
+          function remove(event) {<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;console.log('Enjoy this while it lasts!');<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;nceParagraph.style.backgroundColor = 'pink';<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;onceParagraph.removeEventListener('click',remove);<br>
+          }</p>
+         <h3>Stopping Default Behavior</h3>
+         <p style="color: #FFABF9;">Some elements have default behavior associated with certain events.<br>
+          preventDefault() is a method of the event object that can be used inside the callback function to stop the 
+          default behavior happening</p>
+        <p style="font-family: 'Courier New', Courier, monospace;">
+          const brokenLink = document.getElementById('broken');<br><br>
+          brokenLink.addEventListener('click',(event) => {<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;event.preventDefault();<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;console.log('Broken Link!');<br>
+          });</p>
+         <h3>Event Propagation</h3>
+         <p style="color: #FFABF9;">When you click on an element, you are actually clicking on all the elements it’s nested inside of. For Example:</p>
+         <p style="font-family: 'Courier New', Courier, monospace;">
+          &lt;ul id='list'&gt;
+          &nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;one&lt;/li&gt;
+          &nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;two&lt;/li&gt;
+          &nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;three&lt;/li&gt;
+          &lt;/ul&gt;</p>
+         <p>If you click on one of the &lt;li&gt; elements, you’re also clicking on the &lt;ul&gt; , 
+           &lt;body&gt; and &lt;html&gt; elements. An event is said topropagateas it moves from one 
+           element to another.</p>
+      </div>
+      <br><br>
+      <footer style="clear: right; text-align: center;">
+        <p>Created by Whitney LeSueur - Winter 2021</p>
+      </footer>
+</body></html>
