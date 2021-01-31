@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Object Oriented Programming</title>
+      <link rel="stylesheet" href="../styles/week04style.css">
+   </head>
+   <body>
+    <header>
+        <h2>Week 04 Notes</h2>
+        <nav>
+            <ul style="text-align: left;"><a href="./week04index.html">← WDD 330 Notes</a></ul>
+        </nav>
+    </header> 
+      <div>
+         <h2>Object Oriented Programming</h2>
+         <hr>
+         <h3>Constructor Functions</h3>
+         <p style="color: #FFABF9;">Function that defines the properties and methods of an object:</p>
+         <p style="font-family: 'Courier New', Courier, monospace;">
+            const Dice = function(sides=6){<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;this.sides = sides;<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;this.roll = function() {<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return Math.floor(this.sides * Math.random() + 1)<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+        }</p>
+        <p style="color: #FFABF9;">We can now create an instance of the dice constructor function using the new operator.</p>
+        <p style="font-family: 'Courier New', Courier, monospace;">
+            const redDice = new Dice();<br>
+            << Dice { sides: 6, roll: [Function] }</p>
+
+         <h3>Prototypes</h3>
+         <p>Default properties and methods can be added to the class declaration. In additio, you can augment the 
+             class with extra methods and properties after it has been created using the prototype property of the class. </p>
+         <p style="color: #FFABF9;">Adding a Method Example</p>
+         <p style="font-family: 'Courier New', Courier, monospace;">
+            Turtle.prototype.attack = function(){<br>
+            return `Feel the power of my ${this.weapon}!`;<br>
+            }<br>
+            << [Function]</p>
+
+         <h3>Inheritance</h3>
+         <p>The previous example demonstrates inheritance by inheriting properties and methods from the prototype.</p>
+
+         <h3>Mixins</h3>
+         <p>A mixin is a means to add properties and methods of some objects to another object without using inheritance. 
+             It allows more complex objects to be created by ‘mixing’ basic objects together.</p>
+             <p style="color: #FFABF9;">Basic Functionality</p>
+             <p style="font-family: 'Courier New', Courier, monospace;">Object.assign()</p>
+             <p style="color: #FFABF9;">Example</p>
+             <p style="font-family: 'Courier New', Courier, monospace;">
+                const a = {};<br><br>
+                const b = { name: 'JavaScript' };<br><br>
+                Object.assign(a,b);<br>
+                << { name: 'JavaScript' }<br><br>
+                a.name<br>
+                << 'JavaScript'</p>
+
+         <h3>Borrowing Methods from Prototypes</h3>
+         <p>It’s possible to borrow methods from objects without having to inherit all their properties and methods by 
+            making a reference to the function that you want to borrow (without parentheses so that it isn’t invoked).</p>
+         <p style="color: #FFABF9;">Example:</p>
+         <p style="font-family: 'Courier New', Courier, monospace;">
+            const fly = superman.fly;<br>
+            &lt;&lt;<br><br>
+            fly.call(batman);<br>
+            &lt;&lt; Up, up and away! Batman soars through the air!</p>
+      </div>
+      <br><br>
+      <footer style="clear: right; text-align: center;">
+        <p>Created by Whitney LeSueur - Winter 2021</p>
+      </footer>
+</body></html>
