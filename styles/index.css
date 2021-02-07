@@ -1,3 +1,6 @@
+/*Using <ul> for links causes them to be slightly off-center
+  opted instead to just center body text                  */
+
 a {
     color: #FFFFFF;}
 a:hover {
