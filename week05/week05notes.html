@@ -1,1 +1,160 @@
-This will be week 05 notes.
+<!DOCTYPE html>
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Week 05 Notes</title>
+      <link rel="stylesheet" href="../styles/week05style.css">
+   </head>
+   <body>
+    <header>
+        <h2>Week 05 Notes</h2>
+        <nav>
+            <ul style="text-align: left;"><a href="../WDD 330.html">← WDD 330 Notes</a></ul>
+        </nav>
+    </header>
+      <div>
+         <h2>Testing and Debugging</h2>
+         <hr>
+         <h3>Errors, exceptions, and warnings</h3>
+         <p style="color: #FFABF9;">Error Causes</p>
+         <table>
+            <tr>
+                <td>System error</td>
+                <td>There’s a problem with the system or external devices with which the program is interacting</td>
+            </tr>
+            <tr>
+                <td>Programmer error</td>
+                <td>The program contains incorrect syntax or faulty logic; it could even be as simple as a typo</td>
+            </tr>
+            <tr>
+                <td>User error</td>
+                <td>The user has entered data incorrectly, which the program is unable to handle</td>
+            </tr>
+          </table>
+         <p style="color: #FFABF9;">Exceptions</p>
+         <p>An exception is an error that produces a return value that can then be used by the program to deal with 
+             the error. For example, trying to call a method that is nonexistent will result in a reference error that 
+             raises an exception, i.e.,</p>
+         <p style="font-family: 'Courier New', Courier, monospace;">
+            unicorn();<br>
+            &lt;&lt; ReferenceError: unicorn is not defined</p>
+
+         <p style="color:#FFABF9;">Warnings</p>
+         <p>A warning can occur if there’s an error in the code that isn't enough to cause the program to crash. 
+             The program will continue to run after a warning. An example of a mistake that could cause a warning 
+             is assigning a value to a variable that’s undeclared:</p>
+         <p style="font-family: 'Courier New', Courier, monospace;">
+            pi = 3.142;<br>
+            &lt;&lt; JavaScript Warning: assignment to undeclared variable</p>
+
+         <h3>The Importance of Testing and Debugging</h3>
+         <p>JavaScript is a fairly forgiving language when it comes to errors; but sometimes silent errors 
+             might give unexpected or incorrect results that nobody spots, or lurk in the background for a long time 
+             before causing the program to crash spectacularly. Failing silently makes errors difficult to spot and 
+             longer to track down.<br><br>
+             To avoid this, one must write code that fails 'loudly' so any errors can be identified and fixed quickly,
+             and gracefully so that the user experience is not affected.</p>
+
+         <h3>Strict Mode</h3>
+         <p>Strict mode produces more exceptions and warnings and prohibits the use of some deprecated features. 
+             Strict mode considers coding practices that were previously accepted as just being 'poor style' as 
+             actual errors.</p>
+         <p style="color: #FFABF9;">Strict mode requires the following to be added to the first line of a JavaScript file:</p>
+         <p style="font-family: 'Courier New', Courier, monospace;">'use strict';</p>
+
+         <h3>Debugging in the browser</h3>
+         <p>Debugging is the process of finding out where bugs occur in the code and then dealing with them. 
+             The point at which an error occurs is not always where it originated, so running through the program 
+             may be the best way to see what’s happening at different stages of its execution. It can be useful to 
+             create breakpoints, which halt the progress of the code and give a view of the value of different 
+             variables at that point in the program. </p>
+         <p style="color: #FFABF9;">Options for debugging JavaScript code:</p>
+         <ul>Alerts</ul>
+         <ul>Debugger command</ul>
+         <ul>Console</ul>
+
+         <h3>Error objects</h3>
+         <table>
+            <tr>
+                <td style="font-family: 'Courier New', Courier, monospace;">&nbsp;error&nbsp;</td>
+                <td>Can be created by the host environment when an exception occurs, or it can be created in the code 
+                    using a constructor function</td>
+            </tr>
+            <tr>
+                <td style="font-family: 'Courier New', Courier, monospace;">&nbsp;EvalError&nbsp;</td>
+                <td>Is not used in the current ECMAScript specification and only retained for backwards compatibility. 
+                    It was used to identify errors when using the global eval() function.</td>
+            </tr>
+            <tr>
+                <td style="font-family: 'Courier New', Courier, monospace;">&nbsp;RangeError&nbsp;</td>
+                <td>Thrown when a number is outside an allowable range of values</td>
+            </tr>
+            <tr>
+                <td style="font-family: 'Courier New', Courier, monospace;">&nbsp;ReferenceError&nbsp;</td>
+                <td>Thrown when a reference is made to an item that doesn’t exist. (i.e.,calling a function that hasn't 
+                    been defined</td>
+            </tr>
+            <tr>
+                <td style="font-family: 'Courier New', Courier, monospace;">&nbsp;SyntaxError&nbsp;</td>
+                <td>Thrown when there’s an error in the code’s syntax.</td>
+            </tr>
+            <tr>
+                <td style="font-family: 'Courier New', Courier, monospace;">&nbsp;TypeError&nbsp;</td>
+                <td>Thrown when there’s an error in the type of value used; for example, a string is used when a number is 
+                    expected</td>
+            </tr>
+            <tr>
+                <td style="font-family: 'Courier New', Courier, monospace;">&nbsp;URIError&nbsp;</td>
+                <td>Thrown when there’s a problem encoding or decoding the URI</td>
+            </tr>
+            <tr>
+                <td style="font-family: 'Courier New', Courier, monospace;">&nbsp;InternalError&nbsp;</td>
+                <td>Non-standard error that is thrown when an error occurs in the JavaScript engine. A common cause 
+                    of this too much recursion.</td>
+            </tr>
+        </table>
+         
+         <h3>Throwing exceptions</h3>
+         <p style="color: #FFABF9;">Exceptions can be thrown using the throw statements - especially useful when
+          paired with an error object (throw the error):</p>
+         <p style="font-family: 'Courier New', Courier, monospace;">
+            function squareRoot(number) {<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;'use strict';<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;if (number < 0) {<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;throw new RangeError('You can't find the square root of negative numbers')<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;return Math.sqrt(number);<br>
+            };</p>
+          <p style="color: #FFABF9;">And testing that:</p>
+          <p style="font-family: 'Courier New', Courier, monospace;">
+            squareRoot(121);<br>
+            << 11<br><br>
+
+            squareRoot(-1);<br>
+            << RangeError: You can't find the square root of negative numbers</p>
+
+         <h3>Exception handling</h3>
+         <p style="color: #FFABF9;">try, catch, and finally</p>
+         <p style="font-family: 'Courier New', Courier, monospace;">
+            function imaginarySquareRoot(number) { <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;use strict';<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;let answer;<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;try {<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;answer = String(squareRoot(number));<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;} catch(error) {<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;answer = squareRoot(-number)+"i";<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;} finally {<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return `+ or - ${answer}`;<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+        }</p>
+
+         <h3>Testing frameworks</h3>
+         <p>It is possible to write your own tests, however, this can be a laborious process. Testing frameworks 
+             provide a structure to write meaningful tests and then run them. There are a large number of frameworks 
+             available for JavaScript, including Jest.</p>
+      </div>
+      <br><br>
+      <footer style="clear: right; text-align: center;">
+        <p>Created by Whitney LeSueur - Winter 2021</p>
+      </footer>
+</body>
+</html>
