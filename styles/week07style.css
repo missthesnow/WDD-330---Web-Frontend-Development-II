@@ -46,7 +46,8 @@ body {
       ul {
           color: #FFFFFF;
           text-align: left;}
-    
+      div ul a:hover {
+          color: #7289DA;}
       footer {
         position: relative;
         text-align: center;
