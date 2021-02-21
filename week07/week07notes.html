@@ -1,108 +1,128 @@
 <!DOCTYPE html>
 <html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <title>Week XX Notes</title>
-      <link rel="stylesheet" href="./styles/weekXXstyle.css">
-      <!--Note that for notes this should be "../styles/weekXXstyle.css"-->
+      <title>Week 07 Notes</title>
+      <link rel="stylesheet" href="../styles/week07style.css">
    </head>
    <body>
     <header>
-        <h2>Week XX Notes</h2>
+        <h2>Week 07 Notes</h2>
         <nav>
             <ul style="text-align: left;"><a href="../WDD 330.html">← WDD 330 Notes</a></ul>
         </nav>
     </header>
 <!--Use the following template for general typed notes-->    
       <div>
-         <h2>Title of Section</h2>
-         <hr>
-         <h3>Subtitle</h3>
-         <p>Respective Text</p>
-         <h3>Subtitle</h3>
-         <p>Respective Text</p>
-         <h3>Subtitle</h3>
-         <p>Respective Text</p>
-         <h3>Subtitle</h3>
-         <p>Respective Text</p>
-         <h3>Subtitle</h3>
-         <p>Respective Text</p>
-         <h3>Subtitle</h3>
-         <p>Respective Text</p>
-         <h3>Subtitle</h3>
-         <p>Respective Text</p>
-      </div>
-      <hr>
-<!--Use the following template for code snippets-->
-      <div>
-        <h2>Title of Section</h2>
+        <h2>Further Functions</h2>
         <hr>
-        <h3>Subtitle</h3>
-        <p style="color: #FFABF9;">Subsubtitle</p>
-        <p style="font-family: 'Courier New', Courier, monospace;">Monospace Text</p>
-        <p style="color: #FFABF9;">Subsubtitle</p>
-        <p style="font-family: 'Courier New', Courier, monospace;">Monospace Text</p>
-        <p style="color: #FFABF9;">Subsubtitle</p>
-        <p style="font-family: 'Courier New', Courier, monospace;">Monospace Text</p>
-        <p style="color: #FFABF9;">Subsubtitle</p>
-        <p style="font-family: 'Courier New', Courier, monospace;">Monospace Text</p>
-        <h3>Subtitle</h3>
-        <p style="color: #FFABF9;">Subsubtitle</p>
-        <p style="font-family: 'Courier New', Courier, monospace;">Monospace Text</p>
-        <p style="color: #FFABF9;">Subsubtitle</p>
-        <p style="font-family: 'Courier New', Courier, monospace;">Monospace Text</p>
-        <p style="color: #FFABF9;">Subsubtitle</p>
-        <p style="font-family: 'Courier New', Courier, monospace;">Monospace Text</p>
-        <p style="color: #FFABF9;">Subsubtitle</p>
-        <p style="font-family: 'Courier New', Courier, monospace;">Monospace Text</p>
-        <h3>Subtitle</h3>
-        <p style="color: #FFABF9;">Subsubtitle</p>
-        <p style="font-family: 'Courier New', Courier, monospace;">Monospace Text</p>
-        <p style="color: #FFABF9;">Subsubtitle</p>
-        <p style="font-family: 'Courier New', Courier, monospace;">Monospace Text</p>
-        <p style="color: #FFABF9;">Subsubtitle</p>
-        <p style="font-family: 'Courier New', Courier, monospace;">Monospace Text</p>
-        <p style="color: #FFABF9;">Subsubtitle</p>
-        <p style="font-family: 'Courier New', Courier, monospace;">Monospace Text</p>
-      </div>
+        <h3>Immediately Invoked function expressions</h3>
+        <p>An IIFEs is an anonymous function that is invoked as soon as it’s defined. It is primarily achieved by placing 
+            parentheses at the end of the function definition (thus invoking the function). The function also has to be made 
+            into an expression, which is done by placing the whole declaration inside parentheses.</p>
+        <p style="color: #FFABF9;">Example</p>
+        <p style="font-family: 'Courier New', Courier, monospace;">
+            (function(){<br>
+            const temp = 'World';<br>
+            console.log(`Hello ${temp}`);<br>
+            })();<br></p>
+
+        <h3>Recursive functions</h3>
+        <p>Invokes itself until a certain condition is met. Useful when iterative processes are involved</p>
+        <p style="color: #FFABF9;">Factorial Example</p>
+        <p style="font-family: 'Courier New', Courier, monospace;">
+            function factorial(n) {<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;if (n === 0) {<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return 1;<br>
+                &nbsp;&nbsp;&nbsp;&nbsp; else {<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return n * factorial(n - 1);<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+            }</p>
+
+        <h3>Callbacks</h3>
+        <ul><a href="../week02/week02notes.html">See Week 02 Notes</a></ul>
+        <ul><a href="http://callbackhell.com/">Callback Hell</a></ul>
+
+        <h3>Promises</h3>
+        <p>Represents the future result of an asynchronous operation. Promises don't do anything that can't already be 
+            achieved using callbacks, but they simplify the process by avoiding convoluted code that can result from using 
+            multiple callbacks.</p>
+        <p style="color: #FFABF9;">Outcomes</p>
+        <table>
+            <tr>
+                <td style="font-family: 'Courier New', Courier, monospace;">&nbsp;Resolved&nbsp;</td>
+                <td>The asynchronous operation was completed successfully</td>
+            </tr>
+            <tr>
+                <td style="font-family: 'Courier New', Courier, monospace;">&nbsp;Rejected&nbsp;</td>
+                <td>The asynchronous operation: <br>
+                    • Didn’t work as expected, <br>
+                    • Wasn't successfully completed or <br>
+                    • Resulted in an error</td>
+            </tr>
+        </table>
+
+        <h3>Async functions</h3>
+        <p>Allows you to write asynchronous code as if it was synchronous. This is achieved by using the await operator 
+            before an asynchronous function. This will wrap the return value of the function in a promise that can then be 
+            assigned to a variable. The next line of code is not executed until the promise is resolved.</p>
+        <p style="color: #FFABF9;">Example</p>
+        <p style="font-family: 'Courier New', Courier, monospace; font-size: smaller;">
+            async function loadGame(userName) {<br><br>
+                &nbsp;&nbsp;&nbsp;&nbsp;try {<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const user = await login(userName);<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const info = await getPlayerInfo (user.id);<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;}<br><br>
+                &nbsp;&nbsp;&nbsp;&nbsp;catch (error){<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;throw error;<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+            }</p>
+
+        <h3>Currying</h3>
+        <p>A function is said to be curried when not all arguments have been supplied to the function, so it 
+            returns another function that retains the arguments already provided, and expects the remaining 
+            arguments that were omitted when the original function was called. A final result is only returned 
+            once all the expected arguments have eventually been provided.<br><br>
+            Currying relies on higher-order functions that are able to return partially applied functions. All 
+            curried functions are higher-order functions because they return a function, but not all higher-order 
+            functions are curried.<br><br>
+            Currying allows you to turn a single function into a series of functions instead. This is useful if 
+            you find that you’re frequently calling a function with the same argument.</p>
+     </div>
       <hr>
-      <!--Blended Note Template-->    
-      <div>
-        <h2>Title of Section</h2>
+     <div>    
+        <h2>AJAX</h2>
         <hr>
-        <h3>Subtitle</h3>
-        <p>Respective Text</p>
-        <p style="color: #FFABF9;">Subsubtitle</p>
-        <p style="font-family: 'Courier New', Courier, monospace;">Monospace Text</p>
+        <h3>Clients and servers</h3>
+        <p>A client, such as a web browser, will request a resource (usually a web page) from a server, which processes 
+            the request and sends back a response to the client.
 
-        <h3>Subtitle</h3>
-        <p>Respective Text</p>
-        <p style="color: #FFABF9;">Subsubtitle</p>
-        <p style="font-family: 'Courier New', Courier, monospace;">Monospace Text</p>
+            JavaScript was originally designed as a client-side scripting language, adding dynamic features to the 
+            web page that was returned from the server. Ajax allows JavaScript to request resources from a server on 
+            behalf of the client. The resources requested are usually JSON data or small fragments of text or HTML 
+            rather than a whole web page.
+            
+            Consequently, a server is required when requesting resources using Ajax. Typically this involves using a 
+            server-side language, such as PHP, Ruby, Node.js, or .NET to serve the data response following an Ajax 
+            request (usually from a back-end database)</p>
 
-        <h3>Subtitle</h3>
-        <p>Respective Text</p>
-        <p style="color: #FFABF9;">Subsubtitle</p>
-        <p style="font-family: 'Courier New', Courier, monospace;">Monospace Text</p>
+        <h3>Communicating with the server using the Fetch API</h3>
+        <p>The Fetch API provides a global fetch() method that only has one mandatory argument, which is the URL 
+            of the resource you wish to fetch. </p>
+        <p style="color: #FFABF9;">Simple example:</p>
+        <p style="font-family: 'Courier New', Courier, monospace;">
+            fetch('https://example.com/data')<br>
+            .then( // code that handles the response )<br>
+            .catch( // code that runs if the server returns an error )<br></p>
+        <p>The fetch() method returns a promise that resolves to the response returned from the URL that was provided as 
+            an argument. In the example above, the promise will be resolved when a response is received from the URL 
+            'https:example.com/data'. Because it’s a promise, we can also use a catch statement at the end to deal with any 
+            errors that may occur</p>
 
-        <h3>Subtitle</h3>
-        <p>Respective Text</p>
-        <p style="color: #FFABF9;">Subsubtitle</p>
-        <p style="font-family: 'Courier New', Courier, monospace;">Monospace Text</p>
-
-        <h3>Subtitle</h3>
-        <p>Respective Text</p>
-        <p style="color: #FFABF9;">Subsubtitle</p>
-        <p style="font-family: 'Courier New', Courier, monospace;">Monospace Text</p>
-
-        <h3>Subtitle</h3>
-        <p>Respective Text</p>
-        <p style="color: #FFABF9;">Subsubtitle</p>
-        <p style="font-family: 'Courier New', Courier, monospace;">Monospace Text</p>
-
-        <h3>Subtitle</h3>
-        <p>Respective Text</p>
-        <p style="color: #FFABF9;">Subsubtitle</p>
-        <p style="font-family: 'Courier New', Courier, monospace;">Monospace Text</p>
+        <h3>FormData</h3>
+        <p>The Fetch API includes the FormData interface, which makes it much easier to submit information in forms 
+            using Ajax.</p>
+        <p style="color: #FFABF9;">A FormData instance is created using a constructor function:</p>
+        <p style="font-family: 'Courier New', Courier, monospace;">const data = new FormData();</p>
      </div>
       <br><br>
       <footer style="clear: right; text-align: center;">
