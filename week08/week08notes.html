@@ -1,1 +1,112 @@
-This will be week 08 notes.
+<!DOCTYPE html>
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Week 08 Notes</title>
+      <link rel="stylesheet" href="../styles/week08style.css">
+   </head>
+   <body>
+    <header>
+        <h2>Week 08 Notes</h2>
+        <nav>
+            <ul style="text-align: left;"><a href="../WDD 330.html">← WDD 330 Notes</a></ul>
+        </nav>
+    </header>
+      <div>
+        <h2>CSS3 Transforms and Transitions</h2>
+        <hr>
+        <h3>Transforms</h3>
+        <p>The transform property lets you translate, rotate, scale, and/or skew any element on the page. 
+            Some of these effects were possible using previously existing CSS features (i.e. translating 
+            with relative and absolute positioning) CSS3 gives far more control over many more aspects of 
+            the element’s appearance.<br><br>
+            Possible transformations include:</p>
+            <ul>Translation</ul>
+            <ul>Scaling</ul>
+            <ul>Rotation</ul>
+            <ul>Skew</ul>
+
+        <h3>Transitions</h3>
+        <p>Transitions allow the values of CSS properties to change over time, essentially providing simple 
+            animations. If the browser lacks support for transitions, the change will be immediate instead 
+            of gradual, which is fine and accessible. In addition, native CSS transitions generally require 
+            less client-side processing than JavaScript animations, so they’ll usually appear smoother.</p>
+        <p style="color: #FFABF9;">This is is an irreplacable benefit when it comes to mobile devices with 
+            limited computing power.</p>
+        <p>Transition properties include:</p>
+        <ul style="font-family: 'Courier New', Courier, monospace;">transition-duration</ul>
+        <ul style="font-family: 'Courier New', Courier, monospace;">transition-timing-function</ul>
+        <ul style="font-family: 'Courier New', Courier, monospace;">transition-delay</ul>
+        <ul style="font-family: 'Courier New', Courier, monospace;">transition shorthand</ul>
+        <ul style="font-family: 'Courier New', Courier, monospace;"></ul>
+        <p>Possible uses for transitions include:</p>
+        <ul>Multiple Transitions</ul>
+        <ul>Animations</ul>
+     </div>
+     <hr>
+     <div>
+     <h2>Canvas, SVG, and Drag and Drop</h2>
+     <hr>
+     <h3>Canvas</h3>
+     <p>HTML5 has a Canvas API with which we can draw any number of things through JavaScript. This can 
+         improve the performance of a website by avoiding the need to download images off the network. 
+         With canvas, we can draw shapes and lines, arcs and text, gradients and patterns. Canvas also
+         gives us the power to manipulate pixels in images and even video.<br><br>
+        The following platforms support the Canvas API:</p>
+        <ul>Chrome 4+</ul>
+        <ul>Firefox 2+</ul>
+        <ul>Opera 9.6+</ul>
+        <ul>Safari 3.1+</ul>
+        <ul>iOS 3.2+</ul>
+        <ul>Internet Explorer 9.0+</ul>
+        <ul>Android 3.0+</ul>
+     <p style="color: #FFABF9;">Canvas must be inserted as its own element, which can then be grabbed 
+        from the DOM after giving the canvas an ID like so:</p>
+     <p style="font-family: 'Courier New', Courier, monospace;">
+        &lt;canvas id="myCanvas" class="myCanvas"&gt;<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;Sorry! Your browser doesn’t support Canvas.<br>
+        &lt;/canvas&gt;</p>
+
+     <h3>SVG</h3>
+     <p>SVG stands for Scalable Vector Graphics, a specific file format that allowsthe description of 
+         vector graphics using XML. A major selling point of vector graphics in general is that, unlike 
+         many other image types (bitmaps, i.e. GIF, JPEG, PNG, and TIFF), vector images preserve their 
+         quality regardless of scaling. We can be used SVG in may similar ways to the canvas.<br><br></p>
+     <p>Basic SVG is supported on the following platforms:</p>
+        <ul>Chrome 4+</ul>
+        <ul>Safari 3.2+</ul>
+        <ul>Firefox 3+</ul>
+        <ul>Opera 9.6+</ul>
+        <ul>iOS 3.2+</ul>
+        <ul>Internet Explorer 9.0+</ul>
+        <ul>Android browser 4.4+</ul>        
+     <p style="color: #FFABF9;">Canvas versus SVG?<br></p>
+     <p>Depends! Canvas allows for pixel manipulation, a downside however though - it operates in what’s 
+         known as 'immediate' mode. This means that if you ever want to add more to the canvas, you’re unable 
+         to simply add to what’s already there. Every time you finish drawing a shape, the canvas no longer 
+         has access to that shape, because it won’t persist as an object that you can modify - you'd have to 
+         start from scratch. Canvas does allow you to save the images you create to a PNG or JPEG file though.<br><br>
+
+        Canvas is also much faster than SVG because there's no access it on the DOM.<br><br>       
+        
+        What you draw to SVG is accessible via the DOM, because its mode is 'retained' mode, meaning that the 
+        structure of the image is preserved in the XML document that describes it. SVG also has, at this time, 
+        a more complete set of tools to help you work with it.<br><br>
+
+        However, since SVG is a file format—rather than a set of methods that allows you to dynamically draw on 
+        a surface—you can’t manipulate SVG images the way you can manipulate pixels on canvas. It would have been 
+        impossible, for example, to use SVG to convert our color video to black and white as we did with canvas.</p>
+
+     <h3>Drag and Drop</h3>
+     <p>The Drag and Drop API allows us to specify that certain elements are draggable, and then specify what 
+         should happen when these draggable elements are dragged over or dropped onto other elements on the page.<br><br></p>
+         <p>The Drag and Drop API is supported on the following platforms:</p>
+         <ul>All recent versions of Chrome, Firefox, and Safari</ul>
+         <ul>Partial support in Internet Explorer 7.0+ (IE10 doesn’t allow setting the drag image, but supports all other features)</ul>
+         <ul>Opera 12+</ul> 
+    </div>
+      <br><br>
+      <footer style="clear: right; text-align: center;">
+        <p>Created by Whitney LeSueur - Winter 2021</p>
+      </footer>
+</body>
+</html>
